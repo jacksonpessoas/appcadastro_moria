@@ -1,0 +1,41 @@
+.etapa {
+    display: none;
+  }
+
+  .etapa.ativa {
+    display: block;
+  }
+
+  button {
+    margin: 10px 5px;
+  }
+
+  fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+  legend {
+    font-weight: bold;
+  }
+
+
+  .checkbox-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 800px;
+  }
+  
+  .checkbox-grid label {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  #outra-input {
+    width: 60%;
+    margin-left: 10px;
+  }
+  
