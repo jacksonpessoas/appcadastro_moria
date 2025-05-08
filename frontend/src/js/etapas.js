@@ -48,3 +48,7 @@ let etapaAtual = 0;
 // });
 
 //.....................................................................................//
+
+function telaInicial() {
+  window.location.href = '../../index.html'; // Ajuste este caminho conforme necessário
+}
