@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/reset.css">
     <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/mobile.css">
     <script src="../src/js/filhos.js" defer></script>
     <script src="../src/js/etapas.js" defer></script>
     <script src="../src/js/internada.js" defer></script>
@@ -14,7 +16,7 @@
 <body>
     <H1>FICHA CADASTRAL</H1>
 
-    <form action="">
+    <form id="meuFormulario" action="http://localhost:5000/processarFormulario" method="POST">
 
 
         <div class="etapa ativa">
@@ -434,7 +436,7 @@
 
             <button type="button" onclick="voltarEtapa()">Voltar</button>
             <button type="button" onclick="proximaEtapa()">Próximo</button>
-            <button type="submit" id="btnSalvar" disabled>Salvar</button>
+            <input type="button" value="Salvar (Alt+s)" onclick="SalvarDados()" accesskey="s">
 
 
         </div>

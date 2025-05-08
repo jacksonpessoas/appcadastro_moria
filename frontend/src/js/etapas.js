@@ -29,22 +29,22 @@ let etapaAtual = 0;
 //.........Verifica se os campos obrigatorios estao preenchidos para salvar.............//
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('form');
-  const btnSalvar = document.getElementById('btnSalvar');
+// document.addEventListener('DOMContentLoaded', function () {
+//   const form = document.querySelector('form');
+//   const btnSalvar = document.getElementById('btnSalvar');
 
-  function verificarCamposObrigatorios() {
-    const camposObrigatorios = form.querySelectorAll('input[required], select[required], textarea[required]');
-    for (let campo of camposObrigatorios) {
-      if (!campo.value.trim()) {
-        btnSalvar.disabled = true;
-        return;
-      }
-    }
-    btnSalvar.disabled = false;
-  }
+//   function verificarCamposObrigatorios() {
+//     const camposObrigatorios = form.querySelectorAll('input[required], select[required], textarea[required]');
+//     for (let campo of camposObrigatorios) {
+//       if (!campo.value.trim()) {
+//         btnSalvar.disabled = true;
+//         return;
+//       }
+//     }
+//     btnSalvar.disabled = false;
+//   }
 
-  form.addEventListener('input', verificarCamposObrigatorios);
-});
+//   form.addEventListener('input', verificarCamposObrigatorios);
+// });
 
 //.....................................................................................//
