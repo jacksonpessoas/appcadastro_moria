@@ -6,443 +6,508 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/css/reset.css">
     <link rel="stylesheet" href="../src/css/style.css">
-    <link rel="stylesheet" href="../src/css/mobile.css">
+    <link rel="stylesheet" href="../src/css/mobile.css">    
     <script src="../src/js/filhos.js" defer></script>
     <script src="../src/js/etapas.js" defer></script>
     <script src="../src/js/internada.js" defer></script>
+    <script src="../src/js/cep.js" defer></script>
     <title>APP_CADASTRO</title>
 </head>
 
 <body>
-    <H1>FICHA CADASTRAL</H1>
 
-    <form id="meuFormulario" action="http://localhost:5000/processarFormulario" method="POST">
-
-
-        <div class="etapa ativa">
-            <fieldset>
-                <legend>DADOS PESSOAIS</legend>
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Nome" required>
-
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required> <br>
-
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
-
-                <label for="numero">Número</label>
-                <input type="text" id="numero" name="numero" placeholder="Numero" required> <br>
-
-                <label for="bairro">Bairro</label>
-                <input type="text" id="bairro" placeholder="Bairro" required>
-
-                <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
-
-                <label for="uf">UF</label>
-                <select name="uf" id="uf" required>
-                    <option value="" disabled selected>Estado</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-
-                </select>
-
-
-                <label for="estado_civil">Estado Civil</label>
-                <select name="estado_civil" id="estado_civil" required>
-
-                    <option value="" disabled selected>Estado Civil</option>
-                    <option value="solteiro">Solteira</option>
-                    <option value="casado">Casada</option>
-                    <option value="divorciada">Divorciada</option>
-                    <option value="viuva">Viuva</option>
-
-                </select>
-
-                <label for="dt_nasc">Data Nascimento</Label>
-                <input type="date" id="dt_nasc" name="dt_nasc" required> <br>
-
-                <label for="rg">RG</label>
-                <input type="text" id="rg" name="rg" placeholder="Numero da Identidade" required>
-
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" name="cpf" placeholder="Numero do CPF" required>
-
-                <label for="naturalidade">Naturalidade</label>
-                <input type="text" id="naturalidade" name="naturalidade" placeholder="Cidade de Nascimento" required>
-
-            </fieldset>
-
-            <fieldset>
-                <legend>FORMAÇÃO</legend>
-
-                <label for="escolaridade">Escolaridade</label>
-                <select id="escolaridade" name="escolaridade">
-                    <option value="" disabled selected></option>
-                    <option value="fundamental">Ensino Fundamental</option>
-                    <option value="medio">Ensino Médio</option>
-                    <option value="tecnico">Ensino Técnico</option>
-                    <option value="superior">Ensino Superior</option>
-                    <option value="pos">Pos-Graduação</option>
-                    <option value="doutorado">Doutorado</option>
-                    <option value="mestrado">Mestrado</option>
-
-                </select>
-
-                <label for="curso">Curso</label>
-                <input type="text" id="curso" name="curso" placeholder="Qual é o Curso?">
-
-                <label for="profissao">Profissão</label>
-                <input type="text" id="profissao" name="profissao" placeholder="Qual é a Profissão?">
-
-            </fieldset>
+    <div class="form-container">
 
 
 
-            <fieldset>
-                <legend>DADOS DO RESPONSAVEL</legend>
-
-
-                <label for="grauParentesco">Grau de Parentesco</label>
-                <select name="grauParentesco" id="grauParentesco" required>
-
-                    <option value="" disabled selected>Parentesco</option>
-                    <option value="mae">Mãe</option>
-                    <option value="pai">Pai</option>
-                    <option value="Tio">Tio(a)</option>
-                    <option value="esposo">Esposo</option>
-                    <option value="filho">Filho(a)</option>
-                    <option value="outro">Outro</option>
-
-                </select> <br>
-
-                <label for="nomeParenteso">Nome</label>
-                <input type="text" id="nomeParentesco" name="nomeParentesco" placeholder="Nome" required>
-
-                <label for="sobrenomeParentesco">Sobrenome</label>
-                <input type="text" id="sobrenomeParentesco" name="sobrenomeParentesco" placeholder="Sobrenome" required>
-                <br>
-
-                <label for="enderecoParentesco">Endereço</label>
-                <input type="text" id="enderecoParentesco" name="enderecoParentesco" placeholder="Endereço" required>
-
-                <label for="numeroParentesco">Número</label>
-                <input type="text" id="numeroParentesco" name="numeroParentesco" placeholder="Numero" required> <br>
-
-                <label for="bairroParentesco">Bairro</label>
-                <input type="text" id="bairroParentesco" placeholder="Bairro">
-
-                <label for="cidadeParentesco">Cidade</label>
-                <input type="text" id="cidadeParentesco" name="cidadeParentesco" placeholder="Cidade" required>
-
-                <label for="ufParentesco">UF</label>
-                <select name="ufParentesco" id="ufParentesco" required>
-                    <option value="" disabled selected>Estado</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-
-                </select>
-
-
-                <label for="dt_nascParentesco">Data Nascimento</Label>
-                <input type="date" id="dt_nascParentesco" name="dt_nascParentesco" required> <br>
-
-                <label for="rgParentesco">RG</label>
-                <input type="text" id="rgParentesco" name="rgParentesco" placeholder="Numero da Identidade" required>
-
-                <label for="cpfParentesco">CPF</label>
-                <input type="text" id="cpfParentesco" name="cpfParentesco" placeholder="Numero do CPF" required>
-
-                <label for="naturalidadeParentesco">Naturalidade</label>
-                <input type="text" id="naturalidadeParentesco" placeholder="Cidade de Nascimento" required>
-
-
-            </fieldset>
-
-            <button type="button" onclick="proximaEtapa()">Próximo</button>
-
+        <div class="abas">
+            <button class="aba" onclick="irParaEtapa(0)">Dados Pessoais</button>
+            <button class="aba" onclick="irParaEtapa(1)">Informações Familiares</button>
+            <button class="aba" onclick="irParaEtapa(2)">Internamento</button>
         </div>
 
 
-        <div class="etapa">
-
-            <fieldset>
-                <legend>FILIAÇÃO</legend>
-
-                <label for="mae">Mãe</label>
-                <input type="text" id="mae" name="mae" placeholder="Nome da Mãe">
-
-                <label for="contato_mae">Contato</label>
-                <input type="text" id="contato_mae" name="contato_mae" placeholder="Número de Contato">
-
-                <label for="pai">Pai</label>
-                <input type="text" id="pai" name="pai" placeholder="Nome do Pai">
-
-                <label for="contato_pai">Contato</label>
-                <input type="text" id="contato_pai" name="contato_pai" placeholder="Número de Contato">
-
-            </fieldset>
-
-            <fieldset>
-                <legend>INFORMAÇÕES FAMILIARES</legend>
-
-                <label for="nome_conjuge">Nome do Cônjuge</label>
-                <input type="text" id="nome_conjuge" name="nome_conjuge" placeholder="Nome do Cônjuge"> <br>
-
-                <label>Possui filhos?</label>
-                <input type="radio" id="filhosSim" name="temFilhos" value="sim">
-                <label for="filhosSim">Sim</label>
-
-                <input type="radio" id="filhosNao" name="temFilhos" value="nao" checked>
-                <label for="filhosNao">Não</label>
-
-                <br><br>
-
-                <label for="quantidadeFilhos">Quantidade de filhos:</label>
-                <select id="quantidadeFilhos" name="quantidadeFilhos" disabled>
-                    <option value="" disabled selected>Selecione</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-
-                </select>
-
-                <br><br>
-
-                <label for="nomesFilhos">Nome(s) e Idade do(s) filho(s):</label>
-                <input type="text" id="nomesFilhos" name="nomesFilhos" placeholder="Ex: João, 4 - Maria, 7" disabled>
-            </fieldset>
-
-            <button type="button" onclick="voltarEtapa()">Voltar</button>
-            <button type="button" onclick="proximaEtapa()">Próximo</button>
+        <form id="meuFormulario" action="http://localhost:5000/processarFormulario" method="POST">
 
 
-        </div>
+            <div class="etapa ativa">
+
+                <div class="form-flex-container">
+
+                    <fieldset class="principal-fieldset">
+
+                        <legend>DADOS PESSOAIS</legend>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome" required>
+
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required>
+
+                        <label for="dt_nasc">Dt Nasc</Label>
+                        <input type="date" id="dt_nasc" name="dt_nasc" required>
+
+                        <label for="rg">RG</label>
+                        <input type="number" id="rg" name="rg" placeholder="Numero da Identidade" required>
+
+                        <label for="orgao-rg">Orgão</label>
+                        <input type="text" id="orgao-rg" name="orgao-rg" placeholder="Orgão Emissor" required>
+
+                        <label for="rg">Dt. Exp</label>
+                        <input type="number" id="dt-rg" name="dt-rg" placeholder="Data de Emissão" required>
+
+                        <label for="cpf">CPF</label>
+                        <input type="number" id="cpf" name="cpf" placeholder="Numero do CPF" required>
+
+                        <label for="naturalidade">Naturalidade</label>
+                        <input type="text" id="naturalidade" name="naturalidade" placeholder="Cidade de Nascimento"
+                            required><br><br>
 
 
-        <div class="etapa">
-            <fieldset>
-                <legend>INTERNAMENTO</legend>
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" placeholder="Cep" required> <br>
+                        
+                        <label for="rua">Rua</label>
+                        <input type="text" id="rua" name="rua" placeholder="Digite seu endereço" required>
 
-                <fieldset>
-                    <label>JÁ FOI INTERNADA ANTERIORMENTE?</label>
-                    <input type="radio" id="internadaSim" name="internada" value="sim">
-                    <label for="internadaSim">Sim</label>
+                        <label for="numero">Número</label>
+                        <input type="number" id="numero" name="numero" placeholder="Numero" required> 
 
-                    <input type="radio" id="internadaNao" name="internada" value="nao" checked>
-                    <label for="internadaNao">Não</label>
+                        <label for="complemento">Comple.</label>
+                        <input type="text" id="complemento" name="complemento" placeholder="Ex: Casa, 1º andar, etc">
 
-                    <div id="camposInternacao">
-                        <label for="qnt_vezes">Quantas Vezes?</label>
-                        <input type="text" id="qnt_vezes" name="qnt_vezes"
-                            placeholder="Digite quantas vezes foi internada">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" placeholder="Bairro" required>
 
-                        <label for="saidaInternamento">Porque Saiu?</label>
-                        <input type="text" id="saidaInternamento" name="saidaInternamento"
-                            placeholder="Por qual motivo saiu?">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
 
-                        <label for="instituicao">Nome da Instituição</label>
-                        <input type="text" id="instituicao" name="instituicao" placeholder="Nome da Instituição">
+                        <label for="uf">UF</label>
+                        <select name="uf" id="uf" required>
+                            <option value="" disabled selected>Estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
 
-                        <label for="responInstituicao">Responsável</label>
-                        <input type="text" id="responInstituicao" name="responInstituicao"
-                            placeholder="Nome do Responsável">
-
-                        <label for="contato_instituicao">Contato da Instituição</label>
-                        <input type="text" id="contato_instituicao" name="contato_instituicao"
-                            placeholder="Número de Contato da Instituição">
-
-                        <label for="end_instituicao">Endereço da Instituição</label>
-                        <input type="text" id="end_instituicao" name="end_instituicao"
-                            placeholder="Endereço da Instituição">
-
-                        <label for="bairro_instituicao">Bairro</label>
-                        <input type="text" id="bairro_instituicao" name="bairro_instituicao"
-                            placeholder="Digite o Bairro">
-
-                        <label for="cidade_instituicao">Cidade</label>
-                        <input type="text" id="cidade_instituicao" name="cidade_instituicao"
-                            placeholder="Digite a cidade">
-
-                    </div>
-                </fieldset>
-
-
-                <fieldset>
-
-                    <label>TEM PASSAGEM PELA POLÍCIA?</label>
-                    <input type="radio" id="policiaSim" name="policia" value="sim">
-                    <label for="policiaSim">Sim</label>
-
-                    <input type="radio" id="policiaNao" name="policia" value="nao" checked>
-                    <label for="polciaNao">Não</label>
-
-                    <div id="camposPolicia">
-                        <label for="QntVezesPolicia">Quantas Vezes?</label>
-                        <input type="text" id="QntVezesPolicia" name="QntVezesPolicia"
-                            placeholder="Digite quantas vezes Presa?">
-
-                    </div>
-
-                </fieldset>
-
-                <fieldset>
-                    <label>RESPONDE ALGUM PROCESSO?</label>
-                    <input type="radio" id="processoSim" name="processo" value="sim">
-                    <label for="procesoSim">Sim</label>
-
-                    <input type="radio" id="processoNao" name="processo" value="nao" checked>
-                    <label for="processoNao">Não</label>
-
-                    <div id="camposProcesso">
-                        <label for="numeroProcesso">Numero(s) do(s) Processo(s)</label>
-                        <input type="text" id="numeroProcesso" name="numeroProcesso"
-                            placeholder="Digite o numero do Processo?">
-
-                    </div>
-
-                </fieldset>
-
-                <fieldset>
-                    <label>TEM ALGUM PROBLEMA DE SAÚDE?</label>
-                    <input type="radio" id="saudeSim" name="saude" value="sim">
-                    <label for="saudeSim">Sim</label>
-
-                    <input type="radio" id="saudeNao" name="saude" value="nao" checked>
-                    <label for="saudeNao">Não</label>
-
-                    <div id="camposSaude">
-                        <label for="descricaoSaude">Qual?</label>
-                        <input type="text" id="descricaoSaude" name="descricaoSaude" placeholder="Digite as doenças">
-
-                    </div>
-
-                </fieldset>
+                        </select> <br>
 
 
-                <fieldset>
-                    <label>NECESSITA DE MEDICAÇÃO?</label>
-                    <input type="radio" id="medicacaoSim" name="medicacao" value="sim">
-                    <label for="procesoSim">Sim</label>
+                        <label for="estado_civil">Estado Civil</label>
+                        <select name="estado_civil" id="estado_civil" required>
 
-                    <input type="radio" id="medicacaoNao" name="medicacao" value="nao" checked>
-                    <label for="medicaoNao">Não</label>
+                            <option value="" disabled selected>Estado Civil</option>
+                            <option value="solteiro">Solteira</option>
+                            <option value="casado">Casada</option>
+                            <option value="divorciada">Divorciada</option>
+                            <option value="viuva">Viuva</option>
 
-                    <div id="camposMedicacao">
-                        <label for="descricaoMedicacao">Numero do Processo</label>
-                        <input type="text" id="descricaoMedicacao" name="descricaoMedicacao"
-                            placeholder="Digite o nome da medicação">
-
-                    </div>
-
-                </fieldset>
+                        </select><br><br>
 
 
-            </fieldset>
 
-            <fieldset>
-                <legend>DEPENDÊNCIA QUÍMICA</legend>
+                        
 
-                <div class="checkbox-grid">
-                    <label><input type="checkbox" name="dependencia" value="alcool"> Álcool</label>
-                    <label><input type="checkbox" name="dependencia" value="cocaina"> Cocaína</label>
-                    <label><input type="checkbox" name="dependencia" value="crack"> Crack</label>
-                    <label><input type="checkbox" name="dependencia" value="maconha"> Maconha</label>
-                    <label><input type="checkbox" name="dependencia" value="lsd"> LSD</label>
-                    <label><input type="checkbox" name="dependencia" value="lança-perfume"> Lança-perfume</label>
-                    <label><input type="checkbox" name="dependencia" value="ecstasy"> Ecstasy</label>
-                    <label><input type="checkbox" name="dependencia" value="heroina"> Heroína</label>
-                    <label><input type="checkbox" name="dependencia" value="mdma"> MDMA</label>
-                    <label><input type="checkbox" name="dependencia" value="ketamina"> Ketamina</label>
-                    <label><input type="checkbox" name="dependencia" value="benzodiazepinicos">
-                        Benzodiazepínicos</label>
-                    <label><input type="checkbox" name="dependencia" value="inhalantes"> Inalantes</label>
-                    <label><input type="checkbox" name="dependencia" value="metanfetamina"> Metanfetamina</label>
-                    <label><input type="checkbox" name="dependencia" value="nicotina"> Nicotina</label>
-                    <label><input type="checkbox" name="dependencia" value="cafeina"> Cafeína</label>
-                    <label><input type="checkbox" name="dependencia" value="anabolizantes"> Anabolizantes</label>
-                    <label><input type="checkbox" name="dependencia" value="remedios"> Remédios Controlados</label>
-                    <label>
-                        <input type="checkbox" name="dependencia" value="outra" id="checkbox-outra"
-                            onchange="toggleOutraInput()">
-                        Outra
-                    </label>
-                    <input type="text" id="outra-input" name="dependencia_outra" placeholder="Especifique" disabled>
+                    </fieldset>
 
-                    <label for="tempoUsa">Há Quanto Tempo é Usuário?</label>
-                    <input type="text" id="tempoUsa" name="tempoUsa" placeholder="Digite aprox. ">
 
-                    <label for="motivo">O que Motivou Usar?</label>
-                    <input type="text" id="motivo" name="motivo" placeholder="Descreva resumidamente o motivo">
+                    <fieldset>
+                        <legend>FOTO</legend>
+                        <div class="foto-container">
+                            <div class="preview" id="preview">
+                                <span>Sem imagem</span>
+                            </div>
+                            <input type="file" id="foto" name="foto" accept="image/*">
+
+                        </div>
+                    </fieldset>
 
                 </div>
 
-            </fieldset>
+                <fieldset>
+                    <legend>FORMAÇÃO</legend>
 
-            <button type="button" onclick="voltarEtapa()">Voltar</button>
-            <input type="button" value="Home (Alt+H)" onclick="telaInicial()" accesskey="h">
-            <input type="button" value="Salvar (Alt+s)" onclick="SalvarDados()" accesskey="s">
+                    <label for="escolaridade">Escolaridade</label>
+                    <select id="escolaridade" name="escolaridade">
+                        <option value="" disabled selected></option>
+                        <option value="fundamental">Ensino Fundamental</option>
+                        <option value="medio">Ensino Médio</option>
+                        <option value="tecnico">Ensino Técnico</option>
+                        <option value="superior">Ensino Superior</option>
+                        <option value="pos">Pos-Graduação</option>
+                        <option value="doutorado">Doutorado</option>
+                        <option value="mestrado">Mestrado</option>
+
+                    </select>
+
+                    <label for="curso">Curso</label>
+                    <input type="text" id="curso" name="curso" placeholder="Qual é o Curso?">
+
+                    <label for="profissao">Profissão</label>
+                    <input type="text" id="profissao" name="profissao" placeholder="Qual é a Profissão?">
+
+                </fieldset>
 
 
-        </div>
 
-        
-    </form>
+                <fieldset>
+                    <legend>DADOS DO RESPONSAVEL</legend>
+
+
+                    <label for="grauParentesco">Grau de Parentesco</label>
+                    <select name="grauParentesco" id="grauParentesco" required>
+
+                        <option value="" disabled selected>Parentesco</option>
+                        <option value="mae">Mãe</option>
+                        <option value="pai">Pai</option>
+                        <option value="Tio">Tio(a)</option>
+                        <option value="esposo">Esposo</option>
+                        <option value="filho">Filho(a)</option>
+                        <option value="outro">Outro</option>
+
+                    </select> <br>
+
+                    <label for="nomeParenteso">Nome</label>
+                    <input type="text" id="nomeParentesco" name="nomeParentesco" placeholder="Nome" required>
+
+                    <label for="sobrenomeParentesco">Sobrenome</label>
+                    <input type="text" id="sobrenomeParentesco" name="sobrenomeParentesco" placeholder="Sobrenome"
+                        required>
+                    <br>
+
+                    <label for="enderecoParentesco">Endereço</label>
+                    <input type="text" id="enderecoParentesco" name="enderecoParentesco" placeholder="Endereço"
+                        required>
+
+                    <label for="numeroParentesco">Número</label>
+                    <input type="text" id="numeroParentesco" name="numeroParentesco" placeholder="Numero" required>
+                    <br>
+
+                    <label for="bairroParentesco">Bairro</label>
+                    <input type="text" id="bairroParentesco" placeholder="Bairro">
+
+                    <label for="cidadeParentesco">Cidade</label>
+                    <input type="text" id="cidadeParentesco" name="cidadeParentesco" placeholder="Cidade" required>
+
+                    <label for="ufParentesco">UF</label>
+                    <select name="ufParentesco" id="ufParentesco" required>
+                        <option value="" disabled selected>Estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+
+                    </select>
+
+
+                    <label for="dt_nascParentesco">Data Nascimento</Label>
+                    <input type="date" id="dt_nascParentesco" name="dt_nascParentesco" required> <br>
+
+                    <label for="rgParentesco">RG</label>
+                    <input type="text" id="rgParentesco" name="rgParentesco" placeholder="Numero da Identidade"
+                        required>
+
+                    <label for="cpfParentesco">CPF</label>
+                    <input type="text" id="cpfParentesco" name="cpfParentesco" placeholder="Numero do CPF" required>
+
+                    <label for="naturalidadeParentesco">Naturalidade</label>
+                    <input type="text" id="naturalidadeParentesco" placeholder="Cidade de Nascimento" required>
+
+
+                </fieldset>
+
+
+                <button type="button" onclick="salvarLocalmente()">Salvar</button>
+                <button type="button" onclick="proximaEtapa()">Próximo</button>
+            </div>
+
+
+
+
+            <div class="etapa">
+
+                <fieldset>
+                    <legend>FILIAÇÃO</legend>
+
+                    <label for="mae">Mãe</label>
+                    <input type="text" id="mae" name="mae" placeholder="Nome da Mãe">
+
+                    <label for="contato_mae">Contato</label>
+                    <input type="text" id="contato_mae" name="contato_mae" placeholder="Número de Contato">
+
+                    <label for="pai">Pai</label>
+                    <input type="text" id="pai" name="pai" placeholder="Nome do Pai">
+
+                    <label for="contato_pai">Contato</label>
+                    <input type="text" id="contato_pai" name="contato_pai" placeholder="Número de Contato">
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>INFORMAÇÕES FAMILIARES</legend>
+
+                    <label for="nome_conjuge">Nome do Cônjuge</label>
+                    <input type="text" id="nome_conjuge" name="nome_conjuge" placeholder="Nome do Cônjuge"> <br>
+
+                    <label>Possui filhos?</label>
+                    <input type="radio" id="filhosSim" name="temFilhos" value="sim">
+                    <label for="filhosSim">Sim</label>
+
+                    <input type="radio" id="filhosNao" name="temFilhos" value="nao" checked>
+                    <label for="filhosNao">Não</label>
+
+                    <br><br>
+
+                    <label for="quantidadeFilhos">Quantidade de filhos:</label>
+                    <select id="quantidadeFilhos" name="quantidadeFilhos" disabled>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+
+                    </select>
+
+                    <br><br>
+
+                    <label for="nomesFilhos">Nome(s) e Idade do(s) filho(s):</label>
+                    <input type="text" id="nomesFilhos" name="nomesFilhos" placeholder="Ex: João, 4 - Maria, 7"
+                        disabled>
+                </fieldset>
+
+                <button type="button" onclick="voltarEtapa()">Voltar</button>
+                <button type="button" onclick="proximaEtapa()">Próximo</button>
+
+
+            </div>
+
+
+            <div class="etapa">
+                <fieldset>
+                    <legend>INTERNAMENTO</legend>
+
+                    <fieldset class="internamento-fieldset">
+                        <label>Já Foi Internada?</label>
+                        <input type="radio" id="internadaSim" name="internada" value="sim">
+                        <label for="internadaSim">Sim</label>
+
+                        <input type="radio" id="internadaNao" name="internada" value="nao" checked>
+                        <label for="internadaNao">Não</label>
+
+                        <div id="camposInternacao">
+                            <label for="qnt_vezes">Quantas Vezes?</label>
+                            <input type="text" id="qnt_vezes" name="qnt_vezes"
+                                placeholder="Digite quantas vezes foi internada"> <br>
+
+                            <label for="saidaInternamento">Porque Saiu?</label>
+                            <input type="text" id="saidaInternamento" name="saidaInternamento"
+                                placeholder="Por qual motivo saiu?">
+
+                            <label for="instituicao">Nome da Instituição</label>
+                            <input type="text" id="instituicao" name="instituicao" placeholder="Nome da Instituição">
+
+                            <label for="responInstituicao">Responsável</label>
+                            <input type="text" id="responInstituicao" name="responInstituicao"
+                                placeholder="Nome do Responsável">
+
+                            <label for="contato_instituicao">Contato da Instituição</label>
+                            <input type="text" id="contato_instituicao" name="contato_instituicao"
+                                placeholder="Número de Contato da Instituição">
+
+                            <label for="end_instituicao">Endereço da Instituição</label>
+                            <input type="text" id="end_instituicao" name="end_instituicao"
+                                placeholder="Endereço da Instituição">
+
+                            <label for="bairro_instituicao">Bairro</label>
+                            <input type="text" id="bairro_instituicao" name="bairro_instituicao"
+                                placeholder="Digite o Bairro">
+
+                            <label for="cidade_instituicao">Cidade</label>
+                            <input type="text" id="cidade_instituicao" name="cidade_instituicao"
+                                placeholder="Digite a cidade">
+
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset>
+
+                        <label>Tem Passagem pela Policia?</label>
+                        <input type="radio" id="policiaSim" name="policia" value="sim">
+                        <label for="policiaSim">Sim</label>
+
+                        <input type="radio" id="policiaNao" name="policia" value="nao" checked>
+                        <label for="polciaNao">Não</label>
+
+                        <div id="camposPolicia">
+                            <label for="QntVezesPolicia">Quantas Vezes?</label>
+                            <input type="text" id="QntVezesPolicia" name="QntVezesPolicia"
+                                placeholder="Digite quantas vezes Presa?">
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Responde Algum Processo?</label>
+                        <input type="radio" id="processoSim" name="processo" value="sim">
+                        <label for="procesoSim">Sim</label>
+
+                        <input type="radio" id="processoNao" name="processo" value="nao" checked>
+                        <label for="processoNao">Não</label>
+
+                        <div id="camposProcesso">
+                            <label for="numeroProcesso">Numero(s) do(s) Processo(s)</label>
+                            <input type="text" id="numeroProcesso" name="numeroProcesso"
+                                placeholder="Digite o numero do Processo?">
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Tem Algum Problema de Saúde</label>
+                        <input type="radio" id="saudeSim" name="saude" value="sim">
+                        <label for="saudeSim">Sim</label>
+
+                        <input type="radio" id="saudeNao" name="saude" value="nao" checked>
+                        <label for="saudeNao">Não</label>
+
+                        <div id="camposSaude">
+                            <label for="descricaoSaude">Qual?</label>
+                            <input type="text" id="descricaoSaude" name="descricaoSaude"
+                                placeholder="Digite as doenças">
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <fieldset>
+                        <label>Necessita de Medicação?</label>
+                        <input type="radio" id="medicacaoSim" name="medicacao" value="sim">
+                        <label for="procesoSim">Sim</label>
+
+                        <input type="radio" id="medicacaoNao" name="medicacao" value="nao" checked>
+                        <label for="medicaoNao">Não</label>
+
+                        <div id="camposMedicacao">
+                            <label for="descricaoMedicacao">Numero do Processo</label>
+                            <input type="text" id="descricaoMedicacao" name="descricaoMedicacao"
+                                placeholder="Digite o nome da medicação">
+
+                        </div>
+
+                    </fieldset>
+
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>DEPENDÊNCIA QUÍMICA</legend>
+
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" name="dependencia" value="alcool"> Álcool</label>
+                        <label><input type="checkbox" name="dependencia" value="cocaina"> Cocaína</label>
+                        <label><input type="checkbox" name="dependencia" value="crack"> Crack</label>
+                        <label><input type="checkbox" name="dependencia" value="maconha"> Maconha</label>
+                        <label><input type="checkbox" name="dependencia" value="lsd"> LSD</label>
+                        <label><input type="checkbox" name="dependencia" value="lança-perfume">
+                            Lança-perfume</label>
+                        <label><input type="checkbox" name="dependencia" value="ecstasy"> Ecstasy</label>
+                        <label><input type="checkbox" name="dependencia" value="heroina"> Heroína</label>
+                        <label><input type="checkbox" name="dependencia" value="mdma"> MDMA</label>
+                        <label><input type="checkbox" name="dependencia" value="ketamina"> Ketamina</label>
+                        <label><input type="checkbox" name="dependencia" value="benzodiazepinicos">
+                            Benzodiazepínicos</label>
+                        <label><input type="checkbox" name="dependencia" value="inhalantes"> Inalantes</label>
+                        <label><input type="checkbox" name="dependencia" value="metanfetamina">
+                            Metanfetamina</label>
+                        <label><input type="checkbox" name="dependencia" value="nicotina"> Nicotina</label>
+                        <label><input type="checkbox" name="dependencia" value="cafeina"> Cafeína</label>
+                        <label><input type="checkbox" name="dependencia" value="anabolizantes">
+                            Anabolizantes</label>
+                        <label><input type="checkbox" name="dependencia" value="remedios"> Remédios
+                            Controlados</label>
+                        <label>
+                            <input type="checkbox" name="dependencia" value="outra" id="checkbox-outra"
+                                onchange="toggleOutraInput()">
+                            Outra
+                        </label>
+                        <input type="text" id="outra-input" name="dependencia_outra" placeholder="Especifique" disabled>
+
+                        <label for="tempoUsa">Há Quanto Tempo é Usuário?</label>
+                        <input type="text" id="tempoUsa" name="tempoUsa" placeholder="Digite aprox. ">
+
+                        <label for="motivo">O que Motivou Usar?</label>
+                        <input type="text" id="motivo" name="motivo" placeholder="Descreva resumidamente o motivo">
+
+                    </div>
+
+                </fieldset>
+
+                <button type="button" onclick="voltarEtapa()">Voltar</button>
+                <input type="button" value="Home (Alt+H)" onclick="telaInicial()" accesskey="h">
+                <input type="button" value="Salvar (Alt+s)" onclick="SalvarDados()" accesskey="s">
+
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+<script src="../src/js/script.js"></script>
 </body>
 
 </html>

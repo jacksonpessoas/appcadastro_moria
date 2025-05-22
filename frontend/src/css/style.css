@@ -1,41 +1,232 @@
+html, body .form-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #cfd7e4;
+  color: #070707;
+}
+
+/* Título do formulário */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 0 0;
+}
+
+/* Container principal do formulário */
+form {
+  width: 190%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 0;
+}
+
+/* Oculta etapas por padrão */
 .etapa {
-    display: none;
+  display: none;
+}
+
+.etapa.ativa {
+  display: block;
+}
+
+/* Campos agrupados */
+fieldset {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* Efeito no título do fieldset */
+legend {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 10px;
+  color: #2c3e50;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+  position: relative;
+  top: -1px;
+  left: px;
+}
+
+
+/* Botões */
+button {
+
+  padding: 5px 20px;
+  margin: 10px 5px 0 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Abas no topo */
+.abas {
+  display: flex;
+  gap: 0;
+  justify-content: space-between;
+  width: 190%;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #ccc;
+  padding: 0 0px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.abas button {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.abas button:hover {
+  background-color: #dee2e6;
+}
+
+.abas button.ativa {
+  background-color: #fff;
+  color: #007bff;
+  border-bottom: 3px solid #007bff;
+  font-weight: bold;
+}
+
+
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 800px;
+  margin-top: 10px;
+}
+
+.checkbox-grid label {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+
+#outra-input {
+  width: 60%;
+  margin-left: 10px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.foto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.preview {
+  width: 120px;
+  height: 160px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.form-flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Dados pessoais ocupa maior espaço */
+.principal-fieldset {
+  flex:3;
+}
+
+/* Foto ocupa espaço menor e alinha no topo direito */
+.foto-fieldset {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: fit-content;
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
   }
 
-  .etapa.ativa {
-    display: block;
+  .abas {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
   }
 
-  button {
-    margin: 10px 5px;
+  .abas button {
+    width: 100%;
+    text-align: left;
   }
 
-  fieldset {
-    border: 1px solid #ccc;
-    padding: 20px;
-  }
-
-  legend {
-    font-weight: bold;
-  }
-
-
-  .checkbox-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 800px;
-  }
-  
   .checkbox-grid label {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    width: 100%;
   }
-  
-  #outra-input {
-    width: 60%;
-    margin-left: 10px;
-  }
-  
+}
+
+
